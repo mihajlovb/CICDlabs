@@ -1,0 +1,77 @@
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (master)
+$ touch testfile.txt
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (master)
+$ git add testfile.txt 
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (master)
+$ git commit -m "base branch new commit"
+[master (root-commit) e4c6506] base branch new commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 testfile.txt
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (master)
+$ git log --oneline --decorate --graph --all
+* e4c6506 (HEAD -> master) base branch new commit
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (master)
+$ git checkout -b topic
+Switched to a new branch 'topic'
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (topic)
+$ touch testfile2.txt
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (topic)
+$ git add testfile2.txt 
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (topic)
+$ git commit -m "topic branch commit"
+[topic ebb37e5] topic branch commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 testfile2.txt
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (topic)
+$ git rebase master
+Current branch topic is up to date.
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (topic)
+$ git log --oneline --decorate --graph --all
+* ebb37e5 (HEAD -> topic) topic branch commit
+* e4c6506 (master) base branch new commit
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (topic)
+$ git checkout master
+Switched to branch 'master'
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (master)
+$ touch asd.txt
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (master)
+$ git add asd.txt 
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (master)
+$ git commit -m "additional commit"
+[master 1641181] additional commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 asd.txt
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (master)
+$ git log --oneline --decorate --graph --all
+* 1641181 (HEAD -> master) additional commit
+| * ebb37e5 (topic) topic branch commit
+|/
+* e4c6506 base branch new commit
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (master)
+$ git checkout topic
+Switched to branch 'topic'
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (topic)
+$ git rebase master
+Successfully rebased and updated refs/heads/topic.
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task3 (topic)
+$ git log --oneline --decorate --graph --all
+* 2fd6813 (HEAD -> topic) topic branch commit
+* 1641181 (master) additional commit
+* e4c6506 base branch new commit

@@ -1,0 +1,30 @@
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task7 (master)
+$ git config --global alias.unstage "reset HEAD"
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task7 (master)
+$ git config --global alias.last "log -1 HEAD"
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task7 (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=schannel
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true     
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task7 (master)
+$ git last
+commit 3b1dadae3007f6302d97c6f08b000a2ba68d982f (HEAD -> master, tag: v2.0)
+Author: Borjan Mihajlov <borjan.mihajlov@students.finki.ukim.mk>
+Date:   Thu Mar 5 13:15:58 2026 +0100
+
+    newest commit
+
+Borjan@DESKTOP-G8DAK94 MINGW64 ~/FCSE/CICD/task7 (master)
